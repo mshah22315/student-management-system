@@ -33,8 +33,11 @@ public class AdminLogin extends JFrame implements ActionListener {
    */
   private JTextField pwd;
   
+  /**
+   * The constructor where the AdminLogin object is created.
+   */
   public AdminLogin() {
-    /* Set the background color of the title screen. */
+    /* Set the background color of the login screen. */
     getContentPane().setBackground(Color.LIGHT_GRAY);
     /* Disregard the default layout that Swing gives us, 
       so that we can make our own layout. */
