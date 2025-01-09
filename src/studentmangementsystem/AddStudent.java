@@ -255,14 +255,10 @@ public class AddStudent extends JFrame implements ActionListener {
       String emergencyContactCopy = emergencyContact.getText();
       String studentIDCopy = studentID.getText();
       
-      /* Execute logic within try block; if exception caught,
-      print stack trace of exception. */
       try {
-        DatabaseConnection c = new DatabaseConnection(); // Database connection
-        /* Insertion query that is to be executed. */
+        DatabaseConnection c = new DatabaseConnection();
         String query = "insert into students values('" + nameCopy + "', '" + gradeLevelCopy + "', '" + gpaCopy + "', '" + birthdayCopy + "', '" + emailCopy + "', '" + phoneNoCopy + "', '" + addressCopy + "', '" + emergencyContactCopy + "', '" + studentIDCopy + "')";
         c.s.executeUpdate(query);
-        /* Display message indication successfully added details. */
         JOptionPane.showMessageDialog(null, "Details added successfully");
         /* For now, print "Success" if all this is done. (Will later add 
           functionality to swap the screen back to the main screen.)*/

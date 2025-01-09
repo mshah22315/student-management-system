@@ -89,17 +89,12 @@ public class AdminLogin extends JFrame implements ActionListener {
    */
   @Override
   public void actionPerformed(ActionEvent event) {
-    /* Execute the logic within the try block; if exception is caught,
-      print the stack trace of the exception. */
     try {
       String username = user.getText(); // Username string representation
       String password = pwd.getText(); // Password string representation
       
-      DatabaseConnection c = new DatabaseConnection(); // Database connection
-      /* Query that will be executed on the database. */
+      DatabaseConnection c = new DatabaseConnection();
       String query = "select * from adminlogin where username = '" + username + "' and password = '" + password + "'";
-      
-      /* Data obtained from executing the query. */
       ResultSet set = c.s.executeQuery(query);
       /* For now, check if the data is valid; 
         close login screen and print "Good" if so, otherwise, print 
