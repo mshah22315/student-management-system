@@ -20,23 +20,44 @@ import net.proteanit.sql.DbUtils;
  * @author manth
  */
 public class ViewStudents extends JFrame implements ActionListener {
-  
-  JTable table;
-  Choice chooseStudentID;
-  JButton find;
-  JButton display;
-  JButton update;
-  JButton back;
+  /**
+   * The table containing all students entered into the database.
+   * 
+   */
+  private JTable table;
+  /**
+   * The drop-down menu including all valid student IDs.
+   * 
+   */
+  private Choice chooseStudentID;
+  /**
+   * The button for finding a student.
+   * 
+   */
+  private final JButton find;
+  /**
+   * The button for getting a PDF of the table.
+   * 
+   */
+  private final JButton display;
+  /**
+   * The button for updating a student's information.
+   * 
+   */
+  private final JButton update;
+  /**
+   * The button for going back to the main page.
+   * 
+   */
+  private final JButton back;
   
   public ViewStudents() {
-    /* Set the background color of the screen. */
     getContentPane().setBackground(Color.LIGHT_GRAY);
-    /* Disregard Swing's default layout, 
-      so that we can make our own layout. */
+    /* Disregard Swing's default layout to make our own layout. */
     setLayout(null);
     
     /* Create label indicating where to find specific students. */
-    JLabel findLabel = new JLabel("Find Employee by ID");
+    JLabel findLabel = new JLabel("Find Student by ID");
     findLabel.setBounds(20, 20, 150, 20);
     add(findLabel);
     
@@ -104,6 +125,12 @@ public class ViewStudents extends JFrame implements ActionListener {
     setVisible(true);
   }
   
+  /**
+   * The required method to be implemented from the ActionListener interface.
+   * All button logic goes here.
+   * 
+   * @param event the action being performed
+   */
   public void actionPerformed(ActionEvent event) {
     /* Execute this logic if "Find Student" button pressed. */
     if (event.getSource() == find) {
@@ -123,8 +150,7 @@ public class ViewStudents extends JFrame implements ActionListener {
       }
     } else if (event.getSource() == update) { /* Execute this logic if "Update Student" button pressed. */
       setVisible(false);
-      /* Will later add functionality to switch to UpdateStudent. */
-      System.out.println("Will update");
+      new UpdateStudent(chooseStudentID.getSelectedItem());
     } else if (event.getSource() == back) { /* Execute this logic if "Go Back" button pressed. */
       setVisible(false);
       /* Will later add functionality to switch to MainPage. */
@@ -132,6 +158,11 @@ public class ViewStudents extends JFrame implements ActionListener {
     }
   }
   
+  /**
+   * Main method where an instance of ViewStudents is called.
+   * 
+   * @param args the command-line arguments
+   */
   public static void main(String[] args) {
     new ViewStudents();
   }

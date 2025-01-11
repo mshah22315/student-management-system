@@ -21,83 +21,81 @@ import javax.swing.JTextField;
  * @author manth
  */
 public class AddStudent extends JFrame implements ActionListener {
-  
   /* Logic for randomly generating 5-digit number for the student ID. */
-  Random randomizer = new Random();
-  int randomNumber = randomizer.nextInt(99999);
-  
+  private final Random randomizer = new Random();
+  private final int randomNumber = randomizer.nextInt(99999);
   /**
    * The name of the student.
    * 
    */
-  JTextField name;
+  private final JTextField name;
   
   /**
    * The emergency content for the student.
    * 
    */
-  JTextField emergencyContact;
+  private final JTextField emergencyContact;
   
   /**
    * The home address of the student.
    * 
    */
-  JTextField address;
+  private final JTextField address;
   
   /**
    * The phone number of the student.
    * 
    */
-  JTextField phoneNo;
+  private final JTextField phoneNo;
   
   /**
    * The email of the student.
    * 
    */
-  JTextField email;
+  private final JTextField email;
   
   /**
    * The GPA of the student.
    * 
    */
-  JTextField gpa;
+  private final JTextField gpa;
   
   /**
    * The date of birth of the student.
    * 
    */
-  JDateChooser birthday;
+  private final JDateChooser birthday;
   
   /**
    * The undergraduate level of the student.
    * 
    */
-  JComboBox gradeLevel;
+  private final JComboBox gradeLevel;
   
   /**
    * The unique ID of the student.
    * 
    */
-  JLabel studentID;
+  private final JLabel studentID;
   
   /**
    * The add button for adding the student.
    * 
    */
-  JButton add;
+  private final JButton add;
   
   /**
    * The back button for going back to the main screen.
    * 
    */
-  JButton back;
+  private final JButton back;
   
   /**
    * Constructor where the AddStudent object is created.
    */
   public AddStudent() {
     /* Set the background color of the screen. */
-    getContentPane().setBackground(Color.WHITE);
+    getContentPane().setBackground(Color.LIGHT_GRAY);
     /* Disregard the default layout that Swing gives us, 
       so that we can make our own layout. */
     setLayout(null);
