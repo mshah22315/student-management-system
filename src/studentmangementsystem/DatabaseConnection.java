@@ -35,7 +35,7 @@ public class DatabaseConnection {
       conn = DriverManager.getConnection(dbURL, dbUser, dbPwd);
       /* Prepare statement that will be sent to the database. */
       s = conn.createStatement();
-    } catch (SQLException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }

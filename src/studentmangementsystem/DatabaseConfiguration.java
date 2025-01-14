@@ -1,10 +1,7 @@
 package studentmangementsystem;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -20,8 +17,8 @@ public class DatabaseConfiguration {
         System.out.println("Unable to find config.properties");
       }
       properties.load(input);
-    } catch (IOException ex) {
-      ex.printStackTrace();
+    } catch (Exception e) {
+      e.printStackTrace();
     }
   }
     
