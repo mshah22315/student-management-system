@@ -3,7 +3,6 @@ package studentmangementsystem;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-import java.sql.SQLException;
 
 /**
  * This is the class in which a connection to the database will be established.

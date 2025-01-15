@@ -258,16 +258,14 @@ public class AddStudent extends JFrame implements ActionListener {
         String query = "insert into students values('" + nameCopy + "', '" + gradeLevelCopy + "', '" + gpaCopy + "', '" + birthdayCopy + "', '" + emailCopy + "', '" + phoneNoCopy + "', '" + addressCopy + "', '" + emergencyContactCopy + "', '" + studentIDCopy + "')";
         c.s.executeUpdate(query);
         JOptionPane.showMessageDialog(null, "Details added successfully");
-        /* For now, print "Success" if all this is done. (Will later add 
-          functionality to swap the screen back to the main screen.)*/
         setVisible(false);
-        System.out.println("Success");
+        new MainPage();
       } catch (Exception e) {
         e.printStackTrace();
       }
     } else { /* Execute this logic if "Go Back" button clicked. */
       setVisible(false);
-      System.out.println("Other Success");
+      new MainPage();
     }
   }
   

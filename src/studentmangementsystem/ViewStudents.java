@@ -153,8 +153,7 @@ public class ViewStudents extends JFrame implements ActionListener {
       new UpdateStudent(chooseStudentID.getSelectedItem());
     } else if (event.getSource() == back) { /* Execute this logic if "Go Back" button pressed. */
       setVisible(false);
-      /* Will later add functionality to switch to MainPage. */
-      System.out.println("Will go back to main page");
+      new MainPage();
     }
   }
   

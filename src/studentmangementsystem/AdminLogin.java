@@ -96,13 +96,9 @@ public class AdminLogin extends JFrame implements ActionListener {
       DatabaseConnection c = new DatabaseConnection();
       String query = "select * from adminlogin where username = '" + username + "' and password = '" + password + "'";
       ResultSet set = c.s.executeQuery(query);
-      /* For now, check if the data is valid; 
-        close login screen and print "Good" if so, otherwise, print 
-        "Invalid username or password" (will later change this
-        to open up the main page).*/
-      if (set.next()) {
+      if (set.next()) { /* Open main page if admin login information exists. */
         setVisible(false);
-        System.out.println("Good");
+        new MainPage();
       } else {
         JOptionPane.showMessageDialog(null, "Invalid username or password");
         setVisible(false);

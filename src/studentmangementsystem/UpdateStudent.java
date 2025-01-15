@@ -239,14 +239,13 @@ public class UpdateStudent extends JFrame implements ActionListener {
         c.s.executeUpdate(query);
         JOptionPane.showMessageDialog(null, "Details added successfully");
         setVisible(false);
-        /* Will later add functionality to return to main page. */
-        System.out.println("Will go to main page");
+        new MainPage();
       } catch (Exception e) {
         e.printStackTrace();
       }
     } else { /* Execute this logic if the "Go Back" button is pressed. */
       setVisible(false);
-      System.out.println("Will go to main page"); // same as above
+      new MainPage();
     }
   }
   

@@ -163,13 +163,13 @@ public class RemoveStudent extends JFrame implements ActionListener {
         c.s.executeUpdate(query);
         JOptionPane.showMessageDialog(null, "Information Successfully Removed");
         setVisible(false);
-        System.out.println("Will go back to main screen");
+        new MainPage();
       } catch (Exception e) {
         e.printStackTrace();
       }
     } else { // if "Go Back" button pressed
       setVisible(false);
-      System.out.println("Go back to main screen");
+      new MainPage();
     }
   }
   

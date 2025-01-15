@@ -12,9 +12,9 @@ public class DatabaseConfiguration {
   
   static {
     properties = new Properties();
-    try (InputStream input = DatabaseConfiguration.class.getClassLoader().getResourceAsStream("config.properties")) {
+    try (InputStream input = DatabaseConfiguration.class.getClassLoader().getResourceAsStream("dbproperties.properties")) {
       if (input == null) {
-        System.out.println("Unable to find config.properties");
+        System.out.println("Unable to find dbproperties.properties");
       }
       properties.load(input);
     } catch (Exception e) {
